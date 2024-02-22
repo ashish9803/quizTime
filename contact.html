@@ -101,7 +101,7 @@
         <div class="container-fluid fruite py-5">
             <div class="container py-5">
                 <h5 class="mb-4">1. Go to the beach in South Goa where surf meets the sand, where laughter echoes across the land. The cleanest and peaceful beach of South Goa.</h5>
-                <h5 class="mb-4">2. Upload a photo of the beach.</h5>
+                <h5 class="mb-4">2. Upload your photo at the beach.</h5>
                 <div id="uploadSection" class="mb-4">
                     <button id="uploadButton" class="btn btn-primary">Upload Photo</button>
                     <button id="captureButton" class="btn btn-primary">Capture Photo</button>
@@ -110,7 +110,7 @@
                 </div>
             </div>
             <div class="position-relative mx-auto">
-                <a href="shop-detail.html" type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-120">Next</a>
+                <a href="shop-detail.html" type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-120 btn-next">Next</a>
             </div>
         </div>
         
@@ -181,6 +181,18 @@
         </script>
         
         
+        <script>
+            // Function to handle click event of the "Next" button
+            document.querySelector('.btn-next').addEventListener('click', function(event) {
+                // Check if the uploaded photo div is empty
+                if (document.getElementById('uploadedPhoto').innerHTML.trim() === '') {
+                    // Prevent default behavior of the anchor tag
+                    event.preventDefault();
+                    // Show hover text saying "Please upload the photo first"
+                    this.setAttribute('title', 'Please upload the photo first');
+                }
+            });
+        </script>
         
         
         
