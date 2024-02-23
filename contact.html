@@ -102,11 +102,18 @@
             <div class="container py-5">
                 <h5 class="mb-4">1. Go to the beach in South Goa where surf meets the sand, where laughter echoes across the land. The cleanest and peaceful beach of South Goa.</h5>
                 <h5 class="mb-4">2. Upload your photo at the beach.</h5>
+                <div class="container py-5">
+                    <h1 class="mb-4">Guess the beach</h1>
+                    <div class="input-group">
+                        <label for="gameLeader">Name of the beach</label>
+                        <input type="text" id="gameLeader" name="gameLeader">
+                    </div>
+                </div>
                 <div id="uploadSection" class="mb-4">
                     <button id="uploadButton" class="btn btn-primary">Upload Photo</button>
-                    <button id="captureButton" class="btn btn-primary">Capture Photo</button>
                     <div id="cameraView"></div> <!-- This is where the camera feed will be displayed -->
                     <div id="uploadedPhoto"></div> <!-- This is where the captured photo will be displayed -->
+                    <button id="captureButton" class="btn btn-primary">Capture Photo</button>
                 </div>
             </div>
             <div class="position-relative mx-auto">
@@ -122,7 +129,28 @@
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+        <script>
+            // Function to handle click event of the "Next" button
+document.querySelector('.btn-next').addEventListener('click', function(event) {
+    // Check if the uploaded photo div is empty
+    if (document.getElementById('uploadedPhoto').innerHTML.trim() === '') {
+        // Prevent default behavior of the anchor tag
+        event.preventDefault();
+        // Show hover text saying "Please upload the photo first"
+        this.setAttribute('title', 'Please upload the photo first');
+    } else {
+        // Check if the name of the beach matches "majorda" (case insensitive)
+        var beachName = document.getElementById('gameLeader').value.trim().toLowerCase();
+        if (beachName !== 'majorda') {
+            // Prevent default behavior of the anchor tag
+            event.preventDefault();
+            // Show hover text saying "Please enter the correct beach name"
+            this.setAttribute('title', 'Please enter "majorda" as the beach name');
+        }
+    }
+});
 
+        </script>
         <script>
             // Function to handle click event of the upload button
             document.getElementById('uploadButton').addEventListener('click', function() {

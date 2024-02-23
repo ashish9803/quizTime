@@ -27,6 +27,33 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <style>
+            html, body {
+    height: 100%; /* Ensure html and body take up the full viewport height */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+}
+            /* Add background image to the body */
+            body {
+                background-image: url(img/ur.jpg); /* Specify the path to your image file */
+                background-size: cover; /* Cover the entire viewport */
+                background-position: center; /* Center the image */
+                background-repeat: no-repeat;
+            }
+            .container-fluid.fruite {
+    height: 100vh; /* Set the height of the container to cover the entire viewport */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.container-fluid.fruite .container h5 {
+    font-weight: bold; /* Apply bold font */
+    color: white; /* Apply white color */
+    text-align: center; /* Center align text */
+}
+
+        </style>
     </head>
 
     <body>
@@ -42,7 +69,7 @@
         <div class="container-fluid fixed-top">
             <div class="container px-0">
                 <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                    <a href="404.html" class="navbar-brand"><h1 class="text-primary display-6">Look Behind</h1></a>
+                    <a href="404.html" class="navbar-brand"><h1 class="text-primary display-6">You are special</h1></a>
                     <!-- <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars text-primary"></span>
                     </button>
@@ -100,12 +127,14 @@
         <!-- Fruits Shop Start-->
         <div class="container-fluid fruite py-5">
             <div class="container py-5">
-                <h5 class="mb-4">Will You Marry Me?</h5>
+                <h5 class="mb-4">A Beautiful Surprise Is Waiting For You</h5>
+                <h5 class="mb-4">Turn Around</h5>
             </div>
             <div class="position-relative mx-auto">
                 <!-- <a href="404.html" type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-120 btn-next">Next</a> -->
             </div>
         </div>
+
         
         <!-- Fruits Shop End-->
 
@@ -115,6 +144,34 @@
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        <script src="https://cdn.jsdelivr.net/npm/fireworks.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/balloon.js"></script>
+
+<script>
+    // Function to trigger the balloons effect
+    function triggerBalloons() {
+        var balloons = new Balloon({
+            target: document.body, // container element
+            count: 10, // number of balloons
+            minSize: 50, // minimum size (in pixels)
+            maxSize: 100, // maximum size (in pixels)
+            minSpeed: 1, // minimum speed (in pixels per frame)
+            maxSpeed: 3, // maximum speed (in pixels per frame)
+            colors: ['red', 'blue', 'green', 'yellow'] // balloon colors
+        });
+
+        // Start balloons
+        balloons.start();
+    }
+
+    // Trigger the balloons effect immediately
+    triggerBalloons();
+</script>
+
+
+
+
 
         <script>
             // Function to handle click event of the upload button
@@ -186,9 +243,6 @@
                 }
             });
         </script>
-        
-        
-        
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
